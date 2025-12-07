@@ -61,81 +61,68 @@ export function Home() {
     }
   };
 
-  const ProjectCardContent = ({ study, isExternal = false }: { study: typeof personalProjects[0] | typeof professionalProjects[0], isExternal?: boolean }) => (
-    // Card Wrapper: Added light gray background, rounded corners, full height, and padding for the card effect
-    <div className="p-6 bg-gray-50 rounded-xl h-full flex flex-col">
-      <div className="flex-shrink-0">
-        {/* Project Image/Asset Logic */}
-        {study.id === 'noted-by-nani' ? (
+  /* The ProjectCardContent helper component is removed here 
+    because we are reverting to the original rendering structure 
+    to remove the gray boxes, but we manually insert the ExternalLink icon.
+  */
+
+  const renderProjectImage = (studyId: string, title: string) => {
+    switch (studyId) {
+      case 'noted-by-nani':
+        return (
           <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-start pr-[220px]">
             <div className="w-[450px] h-[450px] relative scale-[0.72]">
               <NotedByNaniImage />
             </div>
           </div>
-        ) : study.id === 'blyss' ? (
+        );
+      case 'blyss':
+        return (
           <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-4 pr-[80px]">
-            <img src={BlyssImageStatic} alt="Blyss Social" className="w-full h-full object-contain" />
+            <img src={BlyssImageStatic} alt={title} className="w-full h-full object-contain" />
           </div>
-        ) : study.id === 'sereniti' ? (
+        );
+      case 'sereniti':
+        return (
           <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-4 pr-[80px]">
             <div className="w-[400px] h-[400px] relative scale-[0.65]">
               <SerenityPhones />
             </div>
           </div>
-        ) : study.id === 'clarity-assist' ? (
+        );
+      case 'clarity-assist':
+        return (
           <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-6">
-            <img src={ClarityAssistImage} alt="Clarity Assist" className="w-full h-full object-contain" />
+            <img src={ClarityAssistImage} alt={title} className="w-full h-full object-contain" />
           </div>
-        ) : study.id === 'amazon-learn' ? (
+        );
+      case 'amazon-learn':
+        return (
           <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-6">
-            <img src={AmazonLearnImage} alt="Amazon Learn" className="w-full h-full object-contain" />
+            <img src={AmazonLearnImage} alt={title} className="w-full h-full object-contain" />
           </div>
-        ) : study.id === 'mentor-me-collective' ? (
+        );
+      case 'mentor-me-collective':
+        return (
           <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-start pr-[150px]">
             <div className="w-[450px] h-[450px] relative scale-[0.65]">
               <MentorMeImage />
             </div>
           </div>
-        ) : (
+        );
+      default:
+        return (
           <div className="aspect-[4/3] bg-gray-100 rounded-lg mb-4 overflow-hidden">
             <ImageWithFallback
-              src={`https://via.placeholder.com/800x600?text=Project+${study.id}`}
-              alt={study.title}
+              src={`https://via.placeholder.com/800x600?text=Project+${studyId}`}
+              alt={title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-        )}
-      </div>
+        );
+    }
+  };
 
-      <div className="flex flex-col flex-grow">
-        <div className="flex items-center mb-1">
-          <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
-            {study.title}
-          </h3>
-          {/* External Link Icon: Added here for visibility */}
-          {isExternal && <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" />} 
-        </div>
-        <p className="text-body mb-3 flex-grow">
-          {study.description}
-        </p>
-        <div className="flex flex-wrap gap-2 flex-shrink-0 mt-auto">
-          {study.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 rounded-md"
-              style={{
-                backgroundColor: 'var(--color-light-bg)',
-                color: 'var(--color-gray-text)',
-                fontSize: 'var(--font-size-small)'
-              }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <div>
@@ -143,7 +130,7 @@ export function Home() {
       <section className="min-h-[100vh] flex items-center justify-center relative">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
-            <h1 className="mb-8" style={{ 
+            <h1 className="mb-8" style={{
               fontSize: 'clamp(3rem, 8vw, 6rem)',
               fontWeight: 'var(--font-weight-bold)',
               lineHeight: '1.1',
@@ -152,7 +139,7 @@ export function Home() {
             }}>
               hey, i'm alana!
             </h1>
-            <p className="mb-8" style={{ 
+            <p className="mb-8" style={{
               fontSize: 'clamp(2.5rem, 2.5vw, 3.5rem)',
               fontWeight: 'var(--font-weight-medium)',
               lineHeight: '1.2',
@@ -161,19 +148,19 @@ export function Home() {
             }}>
               ux engineer and entrepreneur designing experiences that empower, connect, and simplify.
             </p>
-            
+
             {/* Scroll Down Arrow */}
-            <button 
+            <button
               onClick={scrollToWork}
               className="flex flex-col items-center cursor-pointer hover:opacity-70 transition-opacity mt-16"
               aria-label="Scroll to work section"
             >
-              <ChevronDown 
-                size={50} 
-                style={{ 
+              <ChevronDown
+                size={50}
+                style={{
                   color: 'var(--color-tan-accent)',
                   animation: 'bounce 2s infinite',
-                }} 
+                }}
               />
             </button>
           </div>
@@ -188,7 +175,7 @@ export function Home() {
         <p className="mb-12 max-w-6xl" style={{ fontSize: '24px', lineHeight: '1.4', color: 'var(--color-gray-text)' }}>
           Too often, digital spaces prioritize efficiency over empathy. My work challenges that norm, centering lived experience, mindful innovation, and ease of use.
         </p>
-        
+
         {/* Skills Container */}
         <div className="bg-white rounded-[50px] shadow-lg p-12 md:p-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -253,14 +240,39 @@ export function Home() {
           PERSONAL VENTURES
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-          {/* Replaced old link block with the new ProjectCardContent wrapper */}
           {personalProjects.map((study) => (
             <Link
               key={study.id}
               to={`/case-studies/${study.id}`}
-              className="group flex"
+              className="group"
             >
-              <ProjectCardContent study={study} />
+              {renderProjectImage(study.id, study.title)}
+              
+              <div className="flex items-center mb-1"> {/* Title/Icon container */}
+                <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
+                  {study.title}
+                </h3>
+                {/* No external link icon needed here */}
+              </div>
+
+              <p className="text-body mb-3">
+                {study.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {study.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-md"
+                    style={{
+                      backgroundColor: 'var(--color-light-bg)',
+                      color: 'var(--color-gray-text)',
+                      fontSize: 'var(--font-size-small)'
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </Link>
           ))}
         </div>
@@ -269,7 +281,6 @@ export function Home() {
           PROFESSIONAL EXPERIENCE
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Replaced old link/anchor blocks with the new ProjectCardContent wrapper */}
           {professionalProjects.map((study) => (
             study.externalLink ? (
               <a
@@ -277,17 +288,70 @@ export function Home() {
                 href={study.externalLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex"
+                className="group"
               >
-                <ProjectCardContent study={study} isExternal={true} />
+                {renderProjectImage(study.id, study.title)}
+
+                <div className="flex items-center mb-1"> {/* Title/Icon container */}
+                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
+                    {study.title}
+                  </h3>
+                  {/* Keep External Link Icon */}
+                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" />
+                </div>
+
+                <p className="text-body mb-3">
+                  {study.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {study.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-md"
+                      style={{
+                        backgroundColor: 'var(--color-light-bg)',
+                        color: 'var(--color-gray-text)',
+                        fontSize: 'var(--font-size-small)'
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </a>
             ) : (
               <Link
                 key={study.id}
                 to={`/case-studies/${study.id}`}
-                className="group flex"
+                className="group"
               >
-                <ProjectCardContent study={study} isExternal={false} />
+                {renderProjectImage(study.id, study.title)}
+
+                <div className="flex items-center mb-1"> {/* Title/Icon container */}
+                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
+                    {study.title}
+                  </h3>
+                    {/* No external link icon needed here */}
+                </div>
+
+                <p className="text-body mb-3">
+                  {study.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {study.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-md"
+                      style={{
+                        backgroundColor: 'var(--color-light-bg)',
+                        color: 'var(--color-gray-text)',
+                        fontSize: 'var(--font-size-small)'
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </Link>
             )
           ))}

@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { Navigation } from './Navigation';
-import { Logo } from './Logo';
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,7 +15,7 @@ export function Layout({ children }: LayoutProps) {
       <footer className="border-t border-gray-200 mt-24">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex items-center">
-            <Logo />
+            <span className="text-gray-900 font-semibold text-lg">Alana Cassidy Stull</span>
           </div>
           <div className="flex justify-end items-center">
             <div className="flex gap-6">
