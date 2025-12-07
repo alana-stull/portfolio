@@ -290,8 +290,7 @@ export function Home() {
                   <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)'}}>
                     {study.title}
                   </h3>
-                  {/* 👈 Added pl-1 for padding */}
-                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors ml-2" />
+                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" />
                 </div>
 
                 <p className="text-body mb-3">
