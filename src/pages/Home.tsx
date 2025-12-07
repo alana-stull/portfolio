@@ -61,11 +61,6 @@ export function Home() {
     }
   };
 
-  /* The ProjectCardContent helper component is removed here 
-    because we are reverting to the original rendering structure 
-    to remove the gray boxes, but we manually insert the ExternalLink icon.
-  */
-
   const renderProjectImage = (studyId: string, title: string) => {
     switch (studyId) {
       case 'noted-by-nani':
@@ -126,7 +121,7 @@ export function Home() {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section (omitted for brevity) */}
       <section className="min-h-[100vh] flex items-center justify-center relative">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
@@ -167,7 +162,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Introduction Section */}
+      {/* Introduction Section (omitted for brevity) */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <h2 className="text-gray-900 mb-4 text-2xl font-bold">
           WHERE CREATIVITY MEETS IMPACT
@@ -176,7 +171,7 @@ export function Home() {
           Too often, digital spaces prioritize efficiency over empathy. My work challenges that norm, centering lived experience, mindful innovation, and ease of use.
         </p>
 
-        {/* Skills Container */}
+        {/* Skills Container (omitted for brevity) */}
         <div className="bg-white rounded-[50px] shadow-lg p-12 md:p-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Design */}
@@ -247,12 +242,11 @@ export function Home() {
               className="group"
             >
               {renderProjectImage(study.id, study.title)}
-              
-              <div className="flex items-center mb-1"> {/* Title/Icon container */}
+
+              <div className="flex items-center mb-1">
                 <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
                   {study.title}
                 </h3>
-                {/* No external link icon needed here */}
               </div>
 
               <p className="text-body mb-3">
@@ -292,12 +286,12 @@ export function Home() {
               >
                 {renderProjectImage(study.id, study.title)}
 
-                <div className="flex items-center mb-1"> {/* Title/Icon container */}
+                <div className="flex items-center mb-1">
                   <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
                     {study.title}
                   </h3>
-                  {/* Keep External Link Icon */}
-                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" />
+                  {/* 👈 Added pl-1 for padding */}
+                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors pl-1" />
                 </div>
 
                 <p className="text-body mb-3">
@@ -327,11 +321,10 @@ export function Home() {
               >
                 {renderProjectImage(study.id, study.title)}
 
-                <div className="flex items-center mb-1"> {/* Title/Icon container */}
+                <div className="flex items-center mb-1">
                   <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
                     {study.title}
                   </h3>
-                    {/* No external link icon needed here */}
                 </div>
 
                 <p className="text-body mb-3">

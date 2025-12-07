@@ -14,10 +14,11 @@ export function Layout({ children }: LayoutProps) {
       </main>
       <footer className="border-t border-gray-200 mt-24">
         <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="flex items-center">
-            <span className="text-gray-900 font-semibold text-lg">Alana Cassidy Stull</span>
-          </div>
-          <div className="flex justify-end items-center">
+          {/* 👈 Added items-center to align everything vertically in the middle */}
+          <div className="flex justify-between items-center flex-col md:flex-row gap-4"> 
+            <div className="flex items-center">
+              <span className="text-gray-900 font-semibold text-lg">Alana Cassidy Stull</span> 
+            </div>
             <div className="flex gap-6">
               <a
                 href="https://linkedin.com/in/alanastull/"
