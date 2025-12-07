@@ -291,7 +291,7 @@ export function Home() {
                     {study.title}
                   </h3>
                   {/* 👈 Added pl-1 for padding */}
-                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors ml-10" />
+                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors ml-1" />
                 </div>
 
                 <p className="text-body mb-3">
