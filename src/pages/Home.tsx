@@ -287,7 +287,7 @@ export function Home() {
                 {renderProjectImage(study.id, study.title)}
 
                 <div className="flex items-center mb-1">
-                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
+                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)', paddingLeft: '5px' }}>
                     {study.title}
                   </h3>
                   {/* 👈 Added pl-1 for padding */}
