@@ -122,23 +122,8 @@ export function Home() {
   return (
     <div>
       {/* Hero Section (omitted for brevity) */}
-      <section className="min-h-[100vh] flex items-center justify-center relative overflow-hidden">
-        {/* Ambient mesh gradient background */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `
-              radial-gradient(ellipse 65% 55% at -5% -10%, rgba(108, 56, 42, 0.55) 0%, transparent 60%),
-              radial-gradient(ellipse 50% 50% at 95% 0%, rgba(210, 155, 80, 0.5) 0%, transparent 55%),
-              radial-gradient(ellipse 45% 40% at 80% 85%, rgba(200, 130, 60, 0.4) 0%, transparent 50%),
-              radial-gradient(ellipse 55% 50% at 15% 90%, rgba(184, 140, 111, 0.35) 0%, transparent 50%),
-              radial-gradient(ellipse 40% 35% at 50% 40%, rgba(230, 180, 100, 0.2) 0%, transparent 45%),
-              radial-gradient(ellipse 60% 50% at 70% 30%, rgba(180, 120, 60, 0.25) 0%, transparent 50%),
-              linear-gradient(180deg, rgba(252,252,252,0) 0%, rgba(252,252,252,0) 75%, rgba(252,252,252,1) 100%)
-            `,
-          }}
-        />
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+      <section className="min-h-[100vh] flex items-center justify-center relative">
+        <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
             <h1 className="mb-8" style={{
               fontSize: 'clamp(3rem, 8vw, 6rem)',
