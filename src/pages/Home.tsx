@@ -128,12 +128,12 @@ export function Home() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background: `
-              radial-gradient(ellipse 80% 60% at 10% 20%, rgba(210, 160, 90, 0.25) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 80% at 85% 15%, rgba(232, 180, 100, 0.2) 0%, transparent 55%),
-              radial-gradient(ellipse 70% 50% at 50% 80%, rgba(180, 130, 70, 0.15) 0%, transparent 50%),
-              radial-gradient(ellipse 90% 70% at 70% 50%, rgba(245, 210, 140, 0.18) 0%, transparent 55%),
-              radial-gradient(ellipse 50% 60% at 20% 70%, rgba(220, 170, 100, 0.12) 0%, transparent 50%),
-              linear-gradient(180deg, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%)
+              radial-gradient(ellipse 80% 60% at 5% 10%, rgba(255, 218, 185, 0.4) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 70% at 80% 10%, rgba(255, 200, 170, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse 70% 50% at 50% 75%, rgba(255, 235, 220, 0.25) 0%, transparent 50%),
+              radial-gradient(ellipse 90% 80% at 65% 40%, rgba(255, 240, 230, 0.35) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 50% at 25% 60%, rgba(255, 225, 200, 0.2) 0%, transparent 45%),
+              linear-gradient(180deg, rgba(255,252,249,1) 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%)
             `,
           }}
         />
