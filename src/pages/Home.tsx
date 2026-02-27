@@ -122,8 +122,22 @@ export function Home() {
   return (
     <div>
       {/* Hero Section (omitted for brevity) */}
-      <section className="min-h-[100vh] flex items-center justify-center relative">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <section className="min-h-[100vh] flex items-center justify-center relative overflow-hidden">
+        {/* Ambient mesh gradient background */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              radial-gradient(ellipse 80% 60% at 10% 20%, rgba(210, 160, 90, 0.25) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 80% at 85% 15%, rgba(232, 180, 100, 0.2) 0%, transparent 55%),
+              radial-gradient(ellipse 70% 50% at 50% 80%, rgba(180, 130, 70, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse 90% 70% at 70% 50%, rgba(245, 210, 140, 0.18) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 60% at 20% 70%, rgba(220, 170, 100, 0.12) 0%, transparent 50%),
+              linear-gradient(180deg, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%)
+            `,
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
           <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
             <h1 className="mb-8" style={{
               fontSize: 'clamp(3rem, 8vw, 6rem)',
