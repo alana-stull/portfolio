@@ -128,13 +128,13 @@ export function Home() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background: `
-              radial-gradient(ellipse 70% 55% at 0% 0%, rgba(108, 56, 42, 0.22) 0%, transparent 55%),
-              radial-gradient(ellipse 55% 60% at 90% 5%, rgba(210, 140, 100, 0.3) 0%, transparent 50%),
-              radial-gradient(ellipse 80% 50% at 50% 75%, rgba(240, 195, 160, 0.25) 0%, transparent 50%),
-              radial-gradient(ellipse 90% 70% at 35% 30%, rgba(255, 215, 185, 0.4) 0%, transparent 55%),
-              radial-gradient(ellipse 50% 50% at 80% 60%, rgba(108, 56, 42, 0.12) 0%, transparent 45%),
-              radial-gradient(ellipse 60% 40% at 60% 10%, rgba(180, 110, 75, 0.15) 0%, transparent 50%),
-              linear-gradient(180deg, rgba(255,248,242,1) 0%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%)
+              radial-gradient(ellipse 65% 55% at -5% -10%, rgba(108, 56, 42, 0.55) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 50% at 95% 0%, rgba(210, 155, 80, 0.5) 0%, transparent 55%),
+              radial-gradient(ellipse 45% 40% at 80% 85%, rgba(200, 130, 60, 0.4) 0%, transparent 50%),
+              radial-gradient(ellipse 55% 50% at 15% 90%, rgba(184, 140, 111, 0.35) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 35% at 50% 40%, rgba(230, 180, 100, 0.2) 0%, transparent 45%),
+              radial-gradient(ellipse 60% 50% at 70% 30%, rgba(180, 120, 60, 0.25) 0%, transparent 50%),
+              linear-gradient(180deg, rgba(252,252,252,0) 0%, rgba(252,252,252,0) 75%, rgba(252,252,252,1) 100%)
             `,
           }}
         />
