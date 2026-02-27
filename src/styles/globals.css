@@ -5,13 +5,21 @@
 :root {
   /* ========================================
      PORTFOLIO COLOR PALETTE
+     Warm, genuine, calming — browns, taupes & greens
      ======================================== */
   --color-brown-primary: #6c382a;
+  --color-brown-dark: #4a2518;
   --color-tan-accent: #b88c6f;
+  --color-taupe: #a39081;
+  --color-sage: #7a8c6e;
+  --color-sage-light: #e8ede4;
+  --color-warm-gray: #6b635c;
   --color-gray-text: #5b5b5b;
   --color-white: #ffffff;
-  --color-black: #1a1a1a;
-  --color-light-bg: #f9f9f9;
+  --color-black: #2c2420;
+  --color-light-bg: #f5f0eb;
+  --color-warm-bg: #faf7f4;
+  --color-border-warm: rgba(108, 56, 42, 0.1);
   
   /* ========================================
      TYPOGRAPHY SYSTEM
@@ -52,7 +60,7 @@
   
   /* Standard theme variables */
   --font-size: 16px;
-  --background: #fcfcfc;
+  --background: var(--color-warm-bg);
   --foreground: var(--color-black);
   --card: var(--color-white);
   --card-foreground: var(--color-black);
@@ -63,15 +71,15 @@
   --secondary: var(--color-tan-accent);
   --secondary-foreground: var(--color-black);
   --muted: var(--color-light-bg);
-  --muted-foreground: var(--color-gray-text);
-  --accent: var(--color-tan-accent);
-  --accent-foreground: var(--color-black);
+  --muted-foreground: var(--color-warm-gray);
+  --accent: var(--color-sage);
+  --accent-foreground: var(--color-white);
   --destructive: #dc2626;
   --destructive-foreground: var(--color-white);
-  --border: rgba(0, 0, 0, 0.1);
+  --border: var(--color-border-warm);
   --input: transparent;
-  --input-background: #f3f3f5;
-  --switch-background: #cbced4;
+  --input-background: var(--color-light-bg);
+  --switch-background: var(--color-taupe);
   --ring: var(--color-brown-primary);
   --radius: 0.5rem;
 }

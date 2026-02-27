@@ -164,15 +164,15 @@ export function Home() {
 
       {/* Introduction Section (omitted for brevity) */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-gray-900 mb-4 text-2xl font-bold">
+        <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--color-black)' }}>
           WHERE CREATIVITY MEETS IMPACT
         </h2>
-        <p className="mb-12 max-w-6xl" style={{ fontSize: '24px', lineHeight: '1.4', color: 'var(--color-gray-text)' }}>
+        <p className="mb-12 max-w-6xl" style={{ fontSize: '24px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
           Too often, digital spaces prioritize efficiency over empathy. My work challenges that norm, centering lived experience, mindful innovation, and ease of use.
         </p>
 
         {/* Skills Container (omitted for brevity) */}
-        <div className="rounded-[50px] p-12 md:p-16" style={{ backgroundColor: '#faf9f7', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}>
+        <div className="rounded-[50px] p-12 md:p-16" style={{ backgroundColor: 'var(--color-light-bg)', border: '1px solid var(--color-border-warm)', boxShadow: '0 4px 24px rgba(44,36,32,0.08)' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Design */}
             <div className="flex flex-col items-start">
@@ -184,10 +184,10 @@ export function Home() {
                   </g>
                 </svg>
               </div>
-              <h3 className="mb-4 text-gray-900" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase' }}>
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase', color: 'var(--color-black)' }}>
                 Design
               </h3>
-              <p className="text-gray-900" style={{ fontSize: '16px', lineHeight: '1.4' }}>
+              <p style={{ fontSize: '16px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
                 Skilled product designer with experience in design thinking, product development, and usability testing.
               </p>
             </div>
@@ -201,10 +201,10 @@ export function Home() {
                   </g>
                 </svg>
               </div>
-              <h3 className="mb-4 text-gray-900" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase' }}>
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase', color: 'var(--color-black)' }}>
                 Development
               </h3>
-              <p className="text-gray-900" style={{ fontSize: '16px', lineHeight: '1.4' }}>
+              <p style={{ fontSize: '16px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
                 Actively expanding expertise in front-end development, with a focus on scalable cross-platform interfaces.
               </p>
             </div>
@@ -218,10 +218,10 @@ export function Home() {
                   </g>
                 </svg>
               </div>
-              <h3 className="mb-4 text-gray-900" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase' }}>
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase', color: 'var(--color-black)' }}>
                 Leadership
               </h3>
-              <p className="text-gray-900" style={{ fontSize: '16px', lineHeight: '1.4' }}>
+              <p style={{ fontSize: '16px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
                 Empathetic leader passionate about mentorship and community impact, committed to cultivating collaborative growth.
               </p>
             </div>
@@ -231,7 +231,7 @@ export function Home() {
 
       {/* Featured Work Section */}
       <section id="featured-work" className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-gray-900 mb-12 text-2xl font-bold">
+        <h2 className="mb-12 text-2xl font-bold" style={{ color: 'var(--color-black)' }}>
           PERSONAL VENTURES
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
@@ -280,7 +280,7 @@ export function Home() {
           ))}
         </div>
 
-        <h2 className="text-gray-900 mb-12 text-2xl font-bold">
+        <h2 className="mb-12 text-2xl font-bold" style={{ color: 'var(--color-black)' }}>
           PROFESSIONAL EXPERIENCE
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

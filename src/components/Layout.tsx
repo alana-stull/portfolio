@@ -7,24 +7,26 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--background)' }}>
       <Navigation />
       <main className="pt-20">
         {children}
       </main>
-      <footer className="border-t border-gray-200 mt-24">
+      <footer className="mt-24" style={{ borderTop: '1px solid var(--color-border-warm)' }}>
         <div className="max-w-7xl mx-auto px-6 py-12">
-          {/* 👈 Added items-center to align everything vertically in the middle */}
           <div className="flex justify-between items-center flex-col md:flex-row gap-4"> 
             <div className="flex items-center">
-              <span className="text-gray-900 font-semibold text-lg">Alana Cassidy Stull</span> 
+              <span className="font-semibold text-lg" style={{ color: 'var(--color-black)' }}>Alana Cassidy Stull</span> 
             </div>
             <div className="flex gap-6">
               <a
                 href="https://linkedin.com/in/alanastull/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="transition-colors"
+                style={{ color: 'var(--color-warm-gray)' }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brown-primary)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-warm-gray)'}
               >
                 LinkedIn
               </a>
@@ -32,13 +34,19 @@ export function Layout({ children }: LayoutProps) {
                 href="https://github.com/alana-stull"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="transition-colors"
+                style={{ color: 'var(--color-warm-gray)' }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brown-primary)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-warm-gray)'}
               >
                 GitHub
               </a>
               <a
                 href="mailto:stull.alana@gmail.com"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="transition-colors"
+                style={{ color: 'var(--color-warm-gray)' }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brown-primary)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-warm-gray)'}
               >
                 Email
               </a>
