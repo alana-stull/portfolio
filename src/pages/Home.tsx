@@ -172,7 +172,7 @@ export function Home() {
         </p>
 
         {/* Skills Container (omitted for brevity) */}
-        <div className="bg-white rounded-[50px] shadow-lg p-12 md:p-16">
+        <div className="rounded-[50px] p-12 md:p-16" style={{ backgroundColor: '#faf9f7', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Design */}
             <div className="flex flex-col items-start">
