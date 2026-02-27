@@ -128,12 +128,13 @@ export function Home() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background: `
-              radial-gradient(ellipse 80% 60% at 5% 10%, rgba(255, 218, 185, 0.4) 0%, transparent 55%),
-              radial-gradient(ellipse 60% 70% at 80% 10%, rgba(255, 200, 170, 0.3) 0%, transparent 50%),
-              radial-gradient(ellipse 70% 50% at 50% 75%, rgba(255, 235, 220, 0.25) 0%, transparent 50%),
-              radial-gradient(ellipse 90% 80% at 65% 40%, rgba(255, 240, 230, 0.35) 0%, transparent 55%),
-              radial-gradient(ellipse 50% 50% at 25% 60%, rgba(255, 225, 200, 0.2) 0%, transparent 45%),
-              linear-gradient(180deg, rgba(255,252,249,1) 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%)
+              radial-gradient(ellipse 70% 55% at 0% 0%, rgba(108, 56, 42, 0.22) 0%, transparent 55%),
+              radial-gradient(ellipse 55% 60% at 90% 5%, rgba(210, 140, 100, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse 80% 50% at 50% 75%, rgba(240, 195, 160, 0.25) 0%, transparent 50%),
+              radial-gradient(ellipse 90% 70% at 35% 30%, rgba(255, 215, 185, 0.4) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 50% at 80% 60%, rgba(108, 56, 42, 0.12) 0%, transparent 45%),
+              radial-gradient(ellipse 60% 40% at 60% 10%, rgba(180, 110, 75, 0.15) 0%, transparent 50%),
+              linear-gradient(180deg, rgba(255,248,242,1) 0%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%)
             `,
           }}
         />
