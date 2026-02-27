@@ -135,8 +135,8 @@ export function Home() {
               hey, i'm alana!
             </h1>
             <p style={{
-              fontSize: 'clamp(1.25rem, 2vw, 1.75rem)',
-              fontWeight: 'var(--font-weight-medium)',
+              fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
+              fontWeight: 'var(--font-weight-regular)',
               lineHeight: '1.5',
               color: 'var(--color-gray-text)',
               textTransform: 'lowercase'
