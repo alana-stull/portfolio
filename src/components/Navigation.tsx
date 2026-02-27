@@ -14,7 +14,7 @@ export function Navigation() {
     { path: '/about', label: 'ABOUT' },
   ];
 
-  const resumeLink = { href: '/path-to-resume.pdf', label: 'RESUME' };
+  const resumeLink = { href: '/Alana-Stull-Resume.pdf', label: 'RESUME' };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-transparent" style={{ backgroundColor: 'rgba(252, 252, 252, 0.7)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
