@@ -125,19 +125,19 @@ export function Home() {
       <section className="min-h-[100vh] flex items-center justify-center relative">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
-            <h1 className="mb-8" style={{
-              fontSize: 'clamp(3rem, 8vw, 6rem)',
+            <h1 className="mb-12" style={{
+              fontSize: 'clamp(3.5rem, 9vw, 7rem)',
               fontWeight: 'var(--font-weight-bold)',
-              lineHeight: '1.1',
+              lineHeight: '1.05',
               color: 'var(--color-brown-primary)',
               textTransform: 'lowercase'
             }}>
               hey, i'm alana!
             </h1>
-            <p className="mb-8" style={{
-              fontSize: 'clamp(2.5rem, 2.5vw, 3.5rem)',
+            <p style={{
+              fontSize: 'clamp(1.25rem, 2vw, 1.75rem)',
               fontWeight: 'var(--font-weight-medium)',
-              lineHeight: '1.2',
+              lineHeight: '1.5',
               color: 'var(--color-gray-text)',
               textTransform: 'lowercase'
             }}>
