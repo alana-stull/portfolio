@@ -318,13 +318,12 @@ export function Home() {
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 rounded-full"
-                      style={{
-                        backgroundColor: 'var(--color-light-bg)',
-                        color: 'var(--color-gray-text)',
-                        fontSize: 'var(--font-size-small)',
-                        border: '1px solid rgba(0,0,0,0.08)'
-                      }}
+                    className="px-3 py-1 rounded-md"
+                    style={{
+                      backgroundColor: 'var(--color-light-bg)',
+                      color: 'var(--color-gray-text)',
+                      fontSize: 'var(--font-size-small)'
+                    }}
                     >
                       {tag}
                     </span>
@@ -361,13 +360,12 @@ export function Home() {
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 rounded-full"
-                      style={{
-                        backgroundColor: 'var(--color-light-bg)',
-                        color: 'var(--color-gray-text)',
-                        fontSize: 'var(--font-size-small)',
-                        border: '1px solid rgba(0,0,0,0.08)'
-                      }}
+                    className="px-3 py-1 rounded-md"
+                    style={{
+                      backgroundColor: 'var(--color-light-bg)',
+                      color: 'var(--color-gray-text)',
+                      fontSize: 'var(--font-size-small)'
+                    }}
                     >
                       {tag}
                     </span>
