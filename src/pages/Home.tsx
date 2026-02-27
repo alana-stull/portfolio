@@ -65,9 +65,11 @@ export function Home() {
     switch (studyId) {
       case 'noted-by-nani':
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
-            <div className="w-[450px] h-[450px] relative scale-[0.72]">
-              <NotedByNaniImage />
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center bg-white relative" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <div className="w-full h-full relative scale-[0.85]">
+                <NotedByNaniImage />
+              </div>
             </div>
           </div>
         );
