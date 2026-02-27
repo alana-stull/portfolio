@@ -65,7 +65,7 @@ export function Home() {
     switch (studyId) {
       case 'noted-by-nani':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-start pr-[220px]">
+          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center" style={{ backgroundColor: '#f5f5f5' }}>
             <div className="w-[450px] h-[450px] relative scale-[0.72]">
               <NotedByNaniImage />
             </div>
@@ -73,13 +73,13 @@ export function Home() {
         );
       case 'blyss':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-4 pr-[80px]">
+          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6" style={{ backgroundColor: '#f5f5f5' }}>
             <img src={BlyssImageStatic} alt={title} className="w-full h-full object-contain" />
           </div>
         );
       case 'sereniti':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-4 pr-[80px]">
+          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6" style={{ backgroundColor: '#f5f5f5' }}>
             <div className="w-[400px] h-[400px] relative scale-[0.65]">
               <SerenityPhones />
             </div>
@@ -87,19 +87,19 @@ export function Home() {
         );
       case 'clarity-assist':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-6">
+          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6" style={{ backgroundColor: '#f5f5f5' }}>
             <img src={ClarityAssistImage} alt={title} className="w-full h-full object-contain" />
           </div>
         );
       case 'amazon-learn':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-6">
+          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6" style={{ backgroundColor: '#f5f5f5' }}>
             <img src={AmazonLearnImage} alt={title} className="w-full h-full object-contain" />
           </div>
         );
       case 'mentor-me-collective':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-start pr-[150px]">
+          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center" style={{ backgroundColor: '#f5f5f5' }}>
             <div className="w-[450px] h-[450px] relative scale-[0.65]">
               <MentorMeImage />
             </div>
@@ -107,11 +107,11 @@ export function Home() {
         );
       default:
         return (
-          <div className="aspect-[4/3] bg-gray-100 rounded-lg mb-4 overflow-hidden">
+          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden" style={{ backgroundColor: '#f5f5f5' }}>
             <ImageWithFallback
               src={`https://via.placeholder.com/800x600?text=Project+${studyId}`}
               alt={title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover"
             />
           </div>
         );
@@ -239,12 +239,21 @@ export function Home() {
             <Link
               key={study.id}
               to={`/case-studies/${study.id}`}
-              className="group"
+              className="group block"
+              style={{
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              }}
             >
               {renderProjectImage(study.id, study.title)}
 
               <div className="flex items-center mb-1">
-                <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
+                <h3 style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h3)' }}>
                   {study.title}
                 </h3>
               </div>
@@ -256,11 +265,12 @@ export function Home() {
                 {study.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 rounded-md"
+                    className="px-3 py-1.5 rounded-full"
                     style={{
                       backgroundColor: 'var(--color-light-bg)',
                       color: 'var(--color-gray-text)',
-                      fontSize: 'var(--font-size-small)'
+                      fontSize: 'var(--font-size-small)',
+                      border: '1px solid rgba(0,0,0,0.08)'
                     }}
                   >
                     {tag}
@@ -282,15 +292,24 @@ export function Home() {
                 href={study.externalLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group block"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                }}
               >
                 {renderProjectImage(study.id, study.title)}
 
                 <div className="flex items-center mb-1">
-                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)'}}>
+                  <h3 style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h3)' }}>
                     {study.title}
                   </h3>
-                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" style={{ paddingLeft: '5px'}} />
+                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" style={{ marginLeft: '8px' }} />
                 </div>
 
                 <p className="text-body mb-3">
@@ -300,11 +319,12 @@ export function Home() {
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-md"
+                      className="px-3 py-1.5 rounded-full"
                       style={{
                         backgroundColor: 'var(--color-light-bg)',
                         color: 'var(--color-gray-text)',
-                        fontSize: 'var(--font-size-small)'
+                        fontSize: 'var(--font-size-small)',
+                        border: '1px solid rgba(0,0,0,0.08)'
                       }}
                     >
                       {tag}
@@ -316,12 +336,21 @@ export function Home() {
               <Link
                 key={study.id}
                 to={`/case-studies/${study.id}`}
-                className="group"
+                className="group block"
+                style={{
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                }}
               >
                 {renderProjectImage(study.id, study.title)}
 
                 <div className="flex items-center mb-1">
-                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
+                  <h3 style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h3)' }}>
                     {study.title}
                   </h3>
                 </div>
@@ -333,11 +362,12 @@ export function Home() {
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-md"
+                      className="px-3 py-1.5 rounded-full"
                       style={{
                         backgroundColor: 'var(--color-light-bg)',
                         color: 'var(--color-gray-text)',
-                        fontSize: 'var(--font-size-small)'
+                        fontSize: 'var(--font-size-small)',
+                        border: '1px solid rgba(0,0,0,0.08)'
                       }}
                     >
                       {tag}
