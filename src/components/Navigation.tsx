@@ -10,9 +10,11 @@ export function Navigation() {
   const isActive = (path: string) => location.pathname === path;
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+    { path: '/', label: 'HOME' },
+    { path: '/about', label: 'ABOUT' },
   ];
+
+  const resumeLink = { href: '/path-to-resume.pdf', label: 'RESUME' };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-transparent" style={{ backgroundColor: 'rgba(252, 252, 252, 0.7)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
@@ -27,15 +29,31 @@ export function Navigation() {
               <Link
                 key={link.path}
                 to={link.path}
-                className="transition-colors"
+                className="transition-colors tracking-wide"
                 style={{
                   color: isActive(link.path) ? 'var(--color-brown-primary)' : 'var(--color-gray-text)',
-                  fontWeight: 'var(--font-weight-medium)'
+                  fontWeight: 'var(--font-weight-medium)',
+                  fontSize: 'var(--font-size-small)',
+                  letterSpacing: '0.05em'
                 }}
               >
                 {link.label}
               </Link>
             ))}
+            <a
+              href={resumeLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors tracking-wide"
+              style={{
+                color: 'var(--color-gray-text)',
+                fontWeight: 'var(--font-weight-medium)',
+                fontSize: 'var(--font-size-small)',
+                letterSpacing: '0.05em'
+              }}
+            >
+              {resumeLink.label}
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,15 +75,32 @@ export function Navigation() {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="block py-2 transition-colors"
+                className="block py-2 transition-colors tracking-wide"
                 style={{
                   color: isActive(link.path) ? 'var(--color-brown-primary)' : 'var(--color-gray-text)',
-                  fontWeight: 'var(--font-weight-medium)'
+                  fontWeight: 'var(--font-weight-medium)',
+                  fontSize: 'var(--font-size-small)',
+                  letterSpacing: '0.05em'
                 }}
               >
                 {link.label}
               </Link>
             ))}
+            <a
+              href={resumeLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="block py-2 transition-colors tracking-wide"
+              style={{
+                color: 'var(--color-gray-text)',
+                fontWeight: 'var(--font-weight-medium)',
+                fontSize: 'var(--font-size-small)',
+                letterSpacing: '0.05em'
+              }}
+            >
+              {resumeLink.label}
+            </a>
           </div>
         )}
       </div>
