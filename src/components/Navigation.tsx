@@ -15,7 +15,7 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-none border-b border-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-transparent" style={{ backgroundColor: 'rgba(252, 252, 252, 0.7)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
