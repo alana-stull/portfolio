@@ -65,7 +65,7 @@ export function Home() {
     switch (studyId) {
       case 'noted-by-nani':
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
             <div className="w-[450px] h-[450px] relative scale-[0.72]">
               <NotedByNaniImage />
             </div>
@@ -73,13 +73,13 @@ export function Home() {
         );
       case 'blyss':
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
             <img src={BlyssImageStatic} alt={title} className="w-full h-full object-contain" />
           </div>
         );
       case 'sereniti':
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
             <div className="w-[400px] h-[400px] relative scale-[0.65]">
               <SerenityPhones />
             </div>
@@ -87,19 +87,19 @@ export function Home() {
         );
       case 'clarity-assist':
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
             <img src={ClarityAssistImage} alt={title} className="w-full h-full object-contain" />
           </div>
         );
       case 'amazon-learn':
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center p-6 bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
             <img src={AmazonLearnImage} alt={title} className="w-full h-full object-contain" />
           </div>
         );
       case 'mentor-me-collective':
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden flex items-center justify-center bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden flex items-center justify-center bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
             <div className="w-[450px] h-[450px] relative scale-[0.65]">
               <MentorMeImage />
             </div>
@@ -107,7 +107,7 @@ export function Home() {
         );
       default:
         return (
-          <div className="aspect-[4/3] rounded-2xl mb-5 overflow-hidden bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+          <div className="aspect-[4/3] rounded-2xl mb-8 overflow-hidden bg-white" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
             <ImageWithFallback
               src={`https://via.placeholder.com/800x600?text=Project+${studyId}`}
               alt={title}
