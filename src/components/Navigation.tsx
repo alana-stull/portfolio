@@ -1,11 +1,20 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Logo } from './Logo';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -18,7 +27,15 @@ export function Navigation() {
   const linkedinLink = { href: 'https://linkedin.com/in/alanastull/', label: 'LINKEDIN' };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: 'rgba(250, 247, 244, 0.7)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        backgroundColor: scrolled ? 'rgba(250, 247, 244, 0.7)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+        transition: 'background-color 0.3s ease, backdrop-filter 0.3s ease',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
