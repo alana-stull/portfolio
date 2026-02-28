@@ -13,8 +13,8 @@ export default function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/v2" element={<HomeV2 />} />
+          <Route path="/" element={<HomeV2 />} />
+          <Route path="/v1" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/case-studies/blyss" element={<Blyss />} />
           <Route path="/case-studies/noted-by-nani" element={<NotedByNani />} />
