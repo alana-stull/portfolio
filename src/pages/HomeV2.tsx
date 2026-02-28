@@ -128,23 +128,31 @@ export function HomeV2() {
 
   const ProjectCard = ({ project }: { project: ProjectData }) => {
     const inner = (
-      <div
-        className="rounded-3xl overflow-hidden transition-all duration-[400ms] ease-out group-hover:translate-y-[-6px] group-hover:shadow-xl"
-        style={{ backgroundColor: project.brandColorLight }}
-      >
-        {/* Image area */}
+      <div className="transition-all duration-[400ms] ease-out group-hover:translate-y-[-6px]">
+        {/* Image area with color burst */}
         <div
-          className="flex items-center justify-center overflow-hidden"
-          style={{ minHeight: '340px', backgroundColor: project.brandColor }}
+          className="relative flex items-center justify-center overflow-hidden rounded-2xl"
+          style={{ minHeight: '340px' }}
         >
-          <div className="flex items-center justify-center p-8">
+          {/* Radial color burst behind the image */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `
+                radial-gradient(ellipse 70% 65% at 50% 50%, ${project.brandColor}40 0%, ${project.brandColor}15 40%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 30% 40%, ${project.brandColor}25 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 70% 60%, ${project.brandColor}20 0%, transparent 55%)
+              `,
+            }}
+          />
+          <div className="relative flex items-center justify-center p-8">
             {renderProjectImage(project.id, project.title)}
           </div>
         </div>
 
         {/* Text content area */}
-        <div className="px-8 py-6">
-          <div className="flex items-center mb-2">
+        <div className="pt-5 px-1">
+          <div className="flex items-center mb-1">
             <h3 style={{
               color: 'var(--color-black)',
               fontWeight: 'var(--font-weight-semibold)',
@@ -161,7 +169,7 @@ export function HomeV2() {
             )}
           </div>
 
-          <p className="mb-4" style={{
+          <p className="mb-3" style={{
             color: 'var(--color-warm-gray)',
             fontSize: 'var(--font-size-body)',
           }}>
@@ -174,7 +182,7 @@ export function HomeV2() {
                 key={tag}
                 className="px-3 py-1 rounded-md"
                 style={{
-                  backgroundColor: 'rgba(255,255,255,0.7)',
+                  backgroundColor: 'var(--color-light-bg)',
                   color: 'var(--color-gray-text)',
                   fontSize: 'var(--font-size-small)',
                 }}
