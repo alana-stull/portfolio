@@ -88,8 +88,8 @@ export function HomeV2() {
     switch (studyId) {
       case 'noted-by-nani':
         return (
-          <div className="w-[320px] h-[260px] relative overflow-hidden">
-            <div className="absolute inset-0 scale-[0.6] origin-center">
+          <div className="w-[280px] h-[240px] overflow-hidden">
+            <div className="w-[470px] h-[400px] origin-top-left" style={{ transform: 'scale(0.6)' }}>
               <NotedByNaniImage />
             </div>
           </div>
@@ -100,8 +100,8 @@ export function HomeV2() {
         );
       case 'sereniti':
         return (
-          <div className="w-[320px] h-[260px] relative overflow-hidden">
-            <div className="absolute inset-0 scale-[0.45] origin-center">
+          <div className="w-[240px] h-[200px] overflow-hidden">
+            <div className="w-[520px] h-[420px] origin-top-left" style={{ transform: 'scale(0.47)' }}>
               <SerenityPhones />
             </div>
           </div>
@@ -116,8 +116,8 @@ export function HomeV2() {
         );
       case 'mentor-me-collective':
         return (
-          <div className="w-[320px] h-[260px] relative overflow-hidden">
-            <div className="absolute inset-0 scale-[0.45] origin-center">
+          <div className="w-[240px] h-[200px] overflow-hidden">
+            <div className="w-[520px] h-[420px] origin-top-left" style={{ transform: 'scale(0.47)' }}>
               <MentorMeImage />
             </div>
           </div>
