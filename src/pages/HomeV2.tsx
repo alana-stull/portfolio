@@ -27,7 +27,7 @@ export function HomeV2() {
       title: 'Blyss Social',
       description: 'Co-Founder, Chief of Design & Development',
       tags: ['End-to-End Product Development', 'Product Strategy'],
-      brandColor: '#3B7DD8',
+      brandColor: '#5885AE',
       brandColorLight: '#e8f0fb',
     },
     {
@@ -35,7 +35,7 @@ export function HomeV2() {
       title: 'Noted by Nani',
       description: 'Founder, Digital Product Designer',
       tags: ['Digital Product Design', 'Data Visualization'],
-      brandColor: '#8B7355',
+      brandColor: '#B88C6F',
       brandColorLight: '#f3efe8',
     },
     {
@@ -43,7 +43,7 @@ export function HomeV2() {
       title: 'Sereniti',
       description: 'Founder, Product Designer',
       tags: ['Academic Research', 'Product Design'],
-      brandColor: '#D4A843',
+      brandColor: '#FFB347',
       brandColorLight: '#fdf6e3',
     },
   ];
@@ -55,8 +55,8 @@ export function HomeV2() {
       description: 'UX Design Intern',
       tags: ['Generative AI', 'Conversation & Interaction Design'],
       externalLink: 'https://www.figma.com/proto/fNmvcmDOMWIOM3WsYTqcDk/final-internship-presentation?page-id=0%3A1&node-id=1-12764&scaling=scale-down&content-scaling=fixed&t=QMY6bv2ctEgOflMs-1',
-      brandColor: '#5B4A9E',
-      brandColorLight: '#eee9fa',
+      brandColor: '#1768C9',
+      brandColorLight: '#e8f0fb',
     },
     {
       id: 'amazon-learn',
@@ -64,15 +64,15 @@ export function HomeV2() {
       description: 'UX Design Intern',
       tags: ['Edtech', 'Product Design', 'Usability Testing'],
       externalLink: 'https://www.figma.com/proto/3mRKne0c0SZYgb92S28miA/all-presentations?page-id=0%3A1&node-id=0-2029&starting-point-node-id=0%3A2029&scaling=scale-down&content-scaling=fixed&t=Dr5c2C1eCFC6CWZe-1',
-      brandColor: '#232F3E',
-      brandColorLight: '#e9ecf0',
+      brandColor: '#1768C9',
+      brandColorLight: '#e8f0fb',
     },
     {
       id: 'mentor-me-collective',
       title: 'Mentor Me Collective',
       description: 'Content Designer',
       tags: ['Brand & Visual Identity', 'Content Design'],
-      brandColor: '#4A8C5C',
+      brandColor: '#5E7F5B',
       brandColorLight: '#e5f2e9',
     },
   ];
@@ -88,32 +88,38 @@ export function HomeV2() {
     switch (studyId) {
       case 'noted-by-nani':
         return (
-          <div className="w-[420px] h-[380px] relative scale-[0.75]">
-            <NotedByNaniImage />
+          <div className="w-[320px] h-[260px] relative">
+            <div className="absolute inset-0 scale-[0.6] origin-center">
+              <NotedByNaniImage />
+            </div>
           </div>
         );
       case 'blyss':
         return (
-          <img src={BlyssImageStatic} alt={title} className="max-h-[280px] object-contain" />
+          <img src={BlyssImageStatic} alt={title} className="max-h-[260px] max-w-full object-contain" />
         );
       case 'sereniti':
         return (
-          <div className="w-[400px] h-[400px] relative scale-[0.55]">
-            <SerenityPhones />
+          <div className="w-[320px] h-[260px] relative">
+            <div className="absolute inset-0 scale-[0.45] origin-center">
+              <SerenityPhones />
+            </div>
           </div>
         );
       case 'clarity-assist':
         return (
-          <img src={ClarityAssistImage} alt={title} className="max-h-[280px] object-contain" />
+          <img src={ClarityAssistImage} alt={title} className="max-h-[260px] max-w-full object-contain" />
         );
       case 'amazon-learn':
         return (
-          <img src={AmazonLearnImage} alt={title} className="max-h-[280px] object-contain" />
+          <img src={AmazonLearnImage} alt={title} className="max-h-[260px] max-w-full object-contain" />
         );
       case 'mentor-me-collective':
         return (
-          <div className="w-[450px] h-[450px] relative scale-[0.55]">
-            <MentorMeImage />
+          <div className="w-[320px] h-[260px] relative">
+            <div className="absolute inset-0 scale-[0.45] origin-center">
+              <MentorMeImage />
+            </div>
           </div>
         );
       default:
@@ -121,7 +127,7 @@ export function HomeV2() {
           <ImageWithFallback
             src={`https://via.placeholder.com/800x600?text=Project+${studyId}`}
             alt={title}
-            className="max-h-[280px] object-contain"
+            className="max-h-[260px] max-w-full object-contain"
           />
         );
     }
@@ -129,24 +135,25 @@ export function HomeV2() {
 
   const ProjectCard = ({ project }: { project: ProjectData }) => {
     const inner = (
-      <div className="transition-all duration-[400ms] ease-out group-hover:translate-y-[-6px]">
+      <div>
         {/* Image area with color burst */}
         <div
-          className="relative flex items-center justify-center overflow-hidden rounded-2xl"
-          style={{ minHeight: '340px' }}
+          className="relative flex items-center justify-center overflow-visible rounded-2xl"
+          style={{ minHeight: '300px' }}
         >
           {/* Radial color burst behind the image */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background: `
-                radial-gradient(ellipse 70% 65% at 50% 50%, ${project.brandColor}40 0%, ${project.brandColor}15 40%, transparent 70%),
-                radial-gradient(ellipse 50% 50% at 30% 40%, ${project.brandColor}25 0%, transparent 60%),
-                radial-gradient(ellipse 50% 50% at 70% 60%, ${project.brandColor}20 0%, transparent 55%)
+                radial-gradient(ellipse 75% 70% at 50% 50%, ${project.brandColor}35 0%, ${project.brandColor}18 35%, transparent 65%),
+                radial-gradient(ellipse 55% 55% at 25% 35%, ${project.brandColor}20 0%, transparent 55%),
+                radial-gradient(ellipse 55% 55% at 75% 65%, ${project.brandColor}18 0%, transparent 50%)
               `,
             }}
           />
-          <div className="relative flex items-center justify-center p-8">
+          {/* Image wrapper -- only this scales on hover */}
+          <div className="relative flex items-center justify-center p-6 transition-transform duration-[400ms] ease-out group-hover:scale-110">
             {renderProjectImage(project.id, project.title)}
           </div>
         </div>
@@ -219,8 +226,20 @@ export function HomeV2() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="min-h-[100vh] flex items-center justify-center relative">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <section className="min-h-[100vh] flex items-center justify-center relative overflow-hidden">
+        {/* Ombre color bursts - right / bottom-right */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              radial-gradient(ellipse 50% 55% at 90% 75%, rgba(184, 140, 111, 0.25) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 95% 55%, rgba(108, 56, 42, 0.15) 0%, transparent 55%),
+              radial-gradient(ellipse 35% 45% at 80% 90%, rgba(255, 179, 71, 0.12) 0%, transparent 50%),
+              radial-gradient(ellipse 30% 30% at 70% 65%, rgba(94, 127, 91, 0.08) 0%, transparent 45%)
+            `,
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
           <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
             <h1 className="mb-12" style={{
               fontSize: 'clamp(3.5rem, 9vw, 7rem)',
