@@ -19,6 +19,7 @@ interface ProjectData {
   brandColorLight: string;
 }
 
+// V2 Home - Color burst project cards
 export function HomeV2() {
   const personalProjects: ProjectData[] = [
     {
