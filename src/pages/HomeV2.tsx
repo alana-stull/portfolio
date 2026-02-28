@@ -88,7 +88,7 @@ export function HomeV2() {
     switch (studyId) {
       case 'noted-by-nani':
         return (
-          <div className="w-[320px] h-[260px] relative">
+          <div className="w-[320px] h-[260px] relative overflow-hidden">
             <div className="absolute inset-0 scale-[0.6] origin-center">
               <NotedByNaniImage />
             </div>
@@ -100,7 +100,7 @@ export function HomeV2() {
         );
       case 'sereniti':
         return (
-          <div className="w-[320px] h-[260px] relative">
+          <div className="w-[320px] h-[260px] relative overflow-hidden">
             <div className="absolute inset-0 scale-[0.45] origin-center">
               <SerenityPhones />
             </div>
@@ -116,7 +116,7 @@ export function HomeV2() {
         );
       case 'mentor-me-collective':
         return (
-          <div className="w-[320px] h-[260px] relative">
+          <div className="w-[320px] h-[260px] relative overflow-hidden">
             <div className="absolute inset-0 scale-[0.45] origin-center">
               <MentorMeImage />
             </div>
@@ -138,7 +138,7 @@ export function HomeV2() {
       <div>
         {/* Image area with color burst */}
         <div
-          className="relative flex items-center justify-center overflow-visible rounded-2xl"
+          className="relative flex items-center justify-center overflow-hidden rounded-2xl"
           style={{ minHeight: '300px' }}
         >
           {/* Radial color burst behind the image */}
