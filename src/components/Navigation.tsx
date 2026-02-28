@@ -15,9 +15,10 @@ export function Navigation() {
   ];
 
   const resumeLink = { href: '/Alana-Stull-Resume.pdf', label: 'RESUME' };
+  const linkedinLink = { href: 'https://linkedin.com/in/alanastull/', label: 'LINKEDIN' };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-transparent" style={{ backgroundColor: 'rgba(250, 247, 244, 0.7)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+    <nav className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: 'rgba(250, 247, 244, 0.7)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -53,6 +54,20 @@ export function Navigation() {
               }}
             >
               {resumeLink.label}
+            </a>
+            <a
+              href={linkedinLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors tracking-wide"
+              style={{
+                color: 'var(--color-gray-text)',
+                fontWeight: 'var(--font-weight-medium)',
+                fontSize: 'var(--font-size-small)',
+                letterSpacing: '0.05em'
+              }}
+            >
+              {linkedinLink.label}
             </a>
           </div>
 
@@ -100,6 +115,21 @@ export function Navigation() {
               }}
             >
               {resumeLink.label}
+            </a>
+            <a
+              href={linkedinLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="block py-2 transition-colors tracking-wide"
+              style={{
+                color: 'var(--color-gray-text)',
+                fontWeight: 'var(--font-weight-medium)',
+                fontSize: 'var(--font-size-small)',
+                letterSpacing: '0.05em'
+              }}
+            >
+              {linkedinLink.label}
             </a>
           </div>
         )}
