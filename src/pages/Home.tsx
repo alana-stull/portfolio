@@ -239,29 +239,36 @@ export function Home() {
             <Link
               key={study.id}
               to={`/case-studies/${study.id}`}
-              className="group block"
+              className="group block rounded-2xl"
               style={{
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                transition: 'transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease, padding 0.35s ease',
+                padding: '0',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+                e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(44,36,32,0.12)';
+                e.currentTarget.style.backgroundColor = 'var(--color-white)';
+                e.currentTarget.style.padding = '12px';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.padding = '0';
               }}
             >
               {renderProjectImage(study.id, study.title)}
 
-              <div className="flex items-center mb-1">
+              <div className="flex items-center mb-1" style={{ padding: '0 4px' }}>
                 <h3 style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h3)' }}>
                   {study.title}
                 </h3>
               </div>
 
-              <p className="text-body mb-3">
+              <p className="text-body mb-3" style={{ padding: '0 4px' }}>
                 {study.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2" style={{ padding: '0 4px' }}>
                 {study.tags.map((tag) => (
                   <span
                     key={tag}
@@ -284,46 +291,57 @@ export function Home() {
           PROFESSIONAL EXPERIENCE
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {professionalProjects.map((study) => (
-            study.externalLink ? (
+          {professionalProjects.map((study) => {
+            const hoverEnter = (e: React.MouseEvent<HTMLElement>) => {
+              e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
+              e.currentTarget.style.boxShadow = '0 8px 32px rgba(44,36,32,0.12)';
+              e.currentTarget.style.backgroundColor = 'var(--color-white)';
+              e.currentTarget.style.padding = '12px';
+            };
+            const hoverLeave = (e: React.MouseEvent<HTMLElement>) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.boxShadow = 'none';
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.padding = '0';
+            };
+            const cardStyle = {
+              transition: 'transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease, padding 0.35s ease',
+              padding: '0',
+            };
+
+            return study.externalLink ? (
               <a
                 key={study.id}
                 href={study.externalLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block"
-                style={{
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                }}
+                className="group block rounded-2xl"
+                style={cardStyle}
+                onMouseEnter={hoverEnter}
+                onMouseLeave={hoverLeave}
               >
                 {renderProjectImage(study.id, study.title)}
 
-                <div className="flex items-center mb-1">
+                <div className="flex items-center mb-1" style={{ padding: '0 4px' }}>
                   <h3 style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h3)' }}>
                     {study.title}
                   </h3>
-                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" style={{ marginLeft: '8px' }} />
+                  <ExternalLink size={16} className="transition-colors" style={{ marginLeft: '8px', color: 'var(--color-taupe)' }} />
                 </div>
 
-                <p className="text-body mb-3">
+                <p className="text-body mb-3" style={{ padding: '0 4px' }}>
                   {study.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" style={{ padding: '0 4px' }}>
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                    className="px-3 py-1 rounded-md"
-                    style={{
-                      backgroundColor: 'var(--color-light-bg)',
-                      color: 'var(--color-gray-text)',
-                      fontSize: 'var(--font-size-small)'
-                    }}
+                      className="px-3 py-1 rounded-md"
+                      style={{
+                        backgroundColor: 'var(--color-light-bg)',
+                        color: 'var(--color-gray-text)',
+                        fontSize: 'var(--font-size-small)'
+                      }}
                     >
                       {tag}
                     </span>
@@ -334,46 +352,40 @@ export function Home() {
               <Link
                 key={study.id}
                 to={`/case-studies/${study.id}`}
-                className="group block"
-                style={{
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                }}
+                className="group block rounded-2xl"
+                style={cardStyle}
+                onMouseEnter={hoverEnter}
+                onMouseLeave={hoverLeave}
               >
                 {renderProjectImage(study.id, study.title)}
 
-                <div className="flex items-center mb-1">
+                <div className="flex items-center mb-1" style={{ padding: '0 4px' }}>
                   <h3 style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h3)' }}>
                     {study.title}
                   </h3>
                 </div>
 
-                <p className="text-body mb-3">
+                <p className="text-body mb-3" style={{ padding: '0 4px' }}>
                   {study.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" style={{ padding: '0 4px' }}>
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                    className="px-3 py-1 rounded-md"
-                    style={{
-                      backgroundColor: 'var(--color-light-bg)',
-                      color: 'var(--color-gray-text)',
-                      fontSize: 'var(--font-size-small)'
-                    }}
+                      className="px-3 py-1 rounded-md"
+                      style={{
+                        backgroundColor: 'var(--color-light-bg)',
+                        color: 'var(--color-gray-text)',
+                        fontSize: 'var(--font-size-small)'
+                      }}
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </Link>
-            )
-          ))}
+            );
+          })}
         </div>
       </section>
 
