@@ -20,22 +20,11 @@ export function Layout({ children }: LayoutProps) {
             </div>
             <div className="flex gap-6">
               <a
-                href="https://linkedin.com/in/alanastull/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors"
-                style={{ color: 'var(--color-warm-gray)' }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brown-primary)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-warm-gray)'}
-              >
-                LinkedIn
-              </a>
-              <a
                 href="https://github.com/alana-stull"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors"
-                style={{ color: 'var(--color-warm-gray)' }}
+                className="transition-colors uppercase tracking-wide"
+                style={{ color: 'var(--color-warm-gray)', fontSize: 'var(--font-size-small)', letterSpacing: '0.05em' }}
                 onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brown-primary)'}
                 onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-warm-gray)'}
               >
@@ -43,8 +32,8 @@ export function Layout({ children }: LayoutProps) {
               </a>
               <a
                 href="mailto:stull.alana@gmail.com"
-                className="transition-colors"
-                style={{ color: 'var(--color-warm-gray)' }}
+                className="transition-colors uppercase tracking-wide"
+                style={{ color: 'var(--color-warm-gray)', fontSize: 'var(--font-size-small)', letterSpacing: '0.05em' }}
                 onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-brown-primary)'}
                 onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-warm-gray)'}
               >
