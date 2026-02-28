@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
+import { HomeV2 } from './pages/HomeV2';
 import { About } from './pages/About';
 import { Blyss } from './pages/case-studies/Blyss';
 import { NotedByNani } from './pages/case-studies/NotedByNani';
@@ -13,6 +14,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/v2" element={<HomeV2 />} />
           <Route path="/about" element={<About />} />
           <Route path="/case-studies/blyss" element={<Blyss />} />
           <Route path="/case-studies/noted-by-nani" element={<NotedByNani />} />

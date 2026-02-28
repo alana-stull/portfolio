@@ -1,0 +1,338 @@
+import { Link } from 'react-router-dom';
+import { ChevronDown, ExternalLink } from 'lucide-react';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import svgPaths from '../imports/svg-qqzod930ty';
+import MentorMeImage from '../imports/Group33987';
+import NotedByNaniImage from '../imports/Group33988';
+import SerenityPhones from '../imports/Group33982';
+import BlyssImageStatic from 'figma:asset/a599320fb284b50fd85c5467705d2e1467d43acb.png';
+import ClarityAssistImage from 'figma:asset/33f3027060c6f4bca0459accb8f98b430d8f9f34.png';
+import AmazonLearnImage from 'figma:asset/2a7240ae2d20598003ea0a91aa16a212bbaaf224.png';
+
+interface ProjectData {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  externalLink?: string;
+  brandColor: string;
+  brandColorLight: string;
+}
+
+export function HomeV2() {
+  const personalProjects: ProjectData[] = [
+    {
+      id: 'blyss',
+      title: 'Blyss Social',
+      description: 'Co-Founder, Chief of Design & Development',
+      tags: ['End-to-End Product Development', 'Product Strategy'],
+      brandColor: '#3B7DD8',
+      brandColorLight: '#e8f0fb',
+    },
+    {
+      id: 'noted-by-nani',
+      title: 'Noted by Nani',
+      description: 'Founder, Digital Product Designer',
+      tags: ['Digital Product Design', 'Data Visualization'],
+      brandColor: '#8B7355',
+      brandColorLight: '#f3efe8',
+    },
+    {
+      id: 'sereniti',
+      title: 'Sereniti',
+      description: 'Founder, Product Designer',
+      tags: ['Academic Research', 'Product Design'],
+      brandColor: '#D4A843',
+      brandColorLight: '#fdf6e3',
+    },
+  ];
+
+  const professionalProjects: ProjectData[] = [
+    {
+      id: 'clarity-assist',
+      title: 'Clarity Assist',
+      description: 'UX Design Intern',
+      tags: ['Generative AI', 'Conversation & Interaction Design'],
+      externalLink: 'https://www.figma.com/proto/fNmvcmDOMWIOM3WsYTqcDk/final-internship-presentation?page-id=0%3A1&node-id=1-12764&scaling=scale-down&content-scaling=fixed&t=QMY6bv2ctEgOflMs-1',
+      brandColor: '#5B4A9E',
+      brandColorLight: '#eee9fa',
+    },
+    {
+      id: 'amazon-learn',
+      title: 'Amazon Learn',
+      description: 'UX Design Intern',
+      tags: ['Edtech', 'Product Design', 'Usability Testing'],
+      externalLink: 'https://www.figma.com/proto/3mRKne0c0SZYgb92S28miA/all-presentations?page-id=0%3A1&node-id=0-2029&starting-point-node-id=0%3A2029&scaling=scale-down&content-scaling=fixed&t=Dr5c2C1eCFC6CWZe-1',
+      brandColor: '#232F3E',
+      brandColorLight: '#e9ecf0',
+    },
+    {
+      id: 'mentor-me-collective',
+      title: 'Mentor Me Collective',
+      description: 'Content Designer',
+      tags: ['Brand & Visual Identity', 'Content Design'],
+      brandColor: '#4A8C5C',
+      brandColorLight: '#e5f2e9',
+    },
+  ];
+
+  const scrollToWork = () => {
+    const workSection = document.getElementById('featured-work');
+    if (workSection) {
+      workSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const renderProjectImage = (studyId: string, title: string) => {
+    switch (studyId) {
+      case 'noted-by-nani':
+        return (
+          <div className="w-[420px] h-[380px] relative scale-[0.75]">
+            <NotedByNaniImage />
+          </div>
+        );
+      case 'blyss':
+        return (
+          <img src={BlyssImageStatic} alt={title} className="max-h-[280px] object-contain" />
+        );
+      case 'sereniti':
+        return (
+          <div className="w-[400px] h-[400px] relative scale-[0.55]">
+            <SerenityPhones />
+          </div>
+        );
+      case 'clarity-assist':
+        return (
+          <img src={ClarityAssistImage} alt={title} className="max-h-[280px] object-contain" />
+        );
+      case 'amazon-learn':
+        return (
+          <img src={AmazonLearnImage} alt={title} className="max-h-[280px] object-contain" />
+        );
+      case 'mentor-me-collective':
+        return (
+          <div className="w-[450px] h-[450px] relative scale-[0.55]">
+            <MentorMeImage />
+          </div>
+        );
+      default:
+        return (
+          <ImageWithFallback
+            src={`https://via.placeholder.com/800x600?text=Project+${studyId}`}
+            alt={title}
+            className="max-h-[280px] object-contain"
+          />
+        );
+    }
+  };
+
+  const ProjectCard = ({ project }: { project: ProjectData }) => {
+    const inner = (
+      <div
+        className="rounded-3xl overflow-hidden transition-all duration-[400ms] ease-out group-hover:translate-y-[-6px] group-hover:shadow-xl"
+        style={{ backgroundColor: project.brandColorLight }}
+      >
+        {/* Image area */}
+        <div
+          className="flex items-center justify-center overflow-hidden"
+          style={{ minHeight: '340px', backgroundColor: project.brandColor }}
+        >
+          <div className="flex items-center justify-center p-8">
+            {renderProjectImage(project.id, project.title)}
+          </div>
+        </div>
+
+        {/* Text content area */}
+        <div className="px-8 py-6">
+          <div className="flex items-center mb-2">
+            <h3 style={{
+              color: 'var(--color-black)',
+              fontWeight: 'var(--font-weight-semibold)',
+              fontSize: 'var(--font-size-h3)',
+            }}>
+              {project.title}
+            </h3>
+            {project.externalLink && (
+              <ExternalLink
+                size={16}
+                className="transition-colors"
+                style={{ marginLeft: '8px', color: 'var(--color-taupe)' }}
+              />
+            )}
+          </div>
+
+          <p className="mb-4" style={{
+            color: 'var(--color-warm-gray)',
+            fontSize: 'var(--font-size-body)',
+          }}>
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 rounded-md"
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.7)',
+                  color: 'var(--color-gray-text)',
+                  fontSize: 'var(--font-size-small)',
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+
+    if (project.externalLink) {
+      return (
+        <a
+          href={project.externalLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block"
+        >
+          {inner}
+        </a>
+      );
+    }
+
+    return (
+      <Link to={`/case-studies/${project.id}`} className="group block">
+        {inner}
+      </Link>
+    );
+  };
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="min-h-[100vh] flex items-center justify-center relative">
+        <div className="max-w-7xl mx-auto px-6 w-full">
+          <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
+            <h1 className="mb-12" style={{
+              fontSize: 'clamp(3.5rem, 9vw, 7rem)',
+              fontWeight: 'var(--font-weight-bold)',
+              lineHeight: '1.05',
+              color: 'var(--color-brown-primary)',
+              textTransform: 'lowercase',
+            }}>
+              hey, i'm alana!
+            </h1>
+            <p style={{
+              fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
+              fontWeight: 'var(--font-weight-regular)',
+              lineHeight: '1.5',
+              color: 'var(--color-gray-text)',
+              textTransform: 'lowercase',
+            }}>
+              ux engineer and entrepreneur designing experiences that empower, connect, and simplify.
+            </p>
+
+            <button
+              onClick={scrollToWork}
+              className="flex flex-col items-center cursor-pointer hover:opacity-70 transition-opacity mt-16"
+              aria-label="Scroll to work section"
+            >
+              <ChevronDown
+                size={50}
+                style={{
+                  color: 'var(--color-tan-accent)',
+                  animation: 'bounce 2s infinite',
+                }}
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Introduction Section */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--color-black)' }}>
+          WHERE CREATIVITY MEETS IMPACT
+        </h2>
+        <p className="mb-12 max-w-6xl" style={{ fontSize: '24px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
+          Too often, digital spaces prioritize efficiency over empathy. My work challenges that norm, centering lived experience, mindful innovation, and ease of use.
+        </p>
+
+        {/* Skills Container */}
+        <div className="rounded-[50px] p-12 md:p-16" style={{ backgroundColor: 'var(--color-light-bg)', border: '1px solid var(--color-border-warm)', boxShadow: '0 4px 24px rgba(44,36,32,0.08)' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="flex flex-col items-start">
+              <div className="w-[70px] h-[70px] flex items-start justify-start mb-3">
+                <svg className="w-[90px] h-[100px]" fill="none" viewBox="0 0 119 152">
+                  <g>
+                    <path d={svgPaths.pcb84900} fill="var(--color-tan-accent)" />
+                    <path d={svgPaths.p3359bf00} fill="var(--color-tan-accent)" />
+                  </g>
+                </svg>
+              </div>
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase', color: 'var(--color-black)' }}>
+                Design
+              </h3>
+              <p style={{ fontSize: '16px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
+                Skilled product designer with experience in design thinking, product development, and usability testing.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-start">
+              <div className="w-[60px] h-[60px] flex items-center justify-start mb-3">
+                <svg className="w-[50px] h-[30px]" fill="none" viewBox="0 0 62 38">
+                  <g>
+                    <path d={svgPaths.p16f1bc00} fill="var(--color-tan-accent)" />
+                  </g>
+                </svg>
+              </div>
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase', color: 'var(--color-black)' }}>
+                Development
+              </h3>
+              <p style={{ fontSize: '16px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
+                Actively expanding expertise in front-end development, with a focus on scalable cross-platform interfaces.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-start">
+              <div className="w-[60px] h-[60px] flex items-start justify-start mb-3">
+                <svg className="w-[50px] h-[60px]" fill="none" viewBox="0 0 80 97">
+                  <g>
+                    <path clipRule="evenodd" d={svgPaths.p848be00} fill="var(--color-tan-accent)" fillRule="evenodd" />
+                  </g>
+                </svg>
+              </div>
+              <h3 className="mb-4" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase', color: 'var(--color-black)' }}>
+                Leadership
+              </h3>
+              <p style={{ fontSize: '16px', lineHeight: '1.4', color: 'var(--color-warm-gray)' }}>
+                Empathetic leader passionate about mentorship and community impact, committed to cultivating collaborative growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Work Section */}
+      <section id="featured-work" className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="mb-12 text-2xl font-bold" style={{ color: 'var(--color-black)' }}>
+          PERSONAL VENTURES
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          {personalProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+
+        <h2 className="mb-12 text-2xl font-bold" style={{ color: 'var(--color-black)' }}>
+          PROFESSIONAL EXPERIENCE
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {professionalProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
