@@ -23,6 +23,48 @@ export function Home() {
     },
   ];
 
+  const personalVentures = [
+    {
+      title: 'Blyss',
+      role: 'Founder & Lead Designer',
+      description: 'Social wellness platform designed to foster mindful digital connections and community support.',
+      link: '/case-studies/blyss',
+    },
+    {
+      title: 'Rhythm',
+      role: 'Co-Founder & UX Lead',
+      description: 'Digital planning ecosystem helping users build intentional habits through thoughtful design.',
+      link: '/case-studies/noted-by-nani',
+    },
+    {
+      title: 'Crwn',
+      role: 'Product Designer',
+      description: 'Mental wellness application providing personalized support through AI-driven insights.',
+      link: '/case-studies/sereniti',
+    },
+  ];
+
+  const professionalExperience = [
+    {
+      company: 'Design Studio',
+      role: 'UX Engineer',
+      period: '2023 — Present',
+      description: 'Leading design system development and front-end implementation for enterprise clients.',
+    },
+    {
+      company: 'Tech Startup',
+      role: 'Product Designer',
+      period: '2021 — 2023',
+      description: 'Drove end-to-end product design for mobile applications serving 50K+ users.',
+    },
+    {
+      company: 'Creative Agency',
+      role: 'Junior Designer',
+      period: '2019 — 2021',
+      description: 'Collaborated on branding and digital experiences for Fortune 500 companies.',
+    },
+  ];
+
   const scrollToWork = () => {
     const workSection = document.getElementById('featured-work');
     if (workSection) {
@@ -162,8 +204,134 @@ export function Home() {
         </div>
       </section>
 
+      {/* Where Creativity Meets Impact Section */}
+      <section className="py-24" style={{ backgroundColor: 'var(--color-warm-white)' }}>
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <h2 
+            className="mb-6"
+            style={{
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: 800,
+              lineHeight: 1.2,
+              color: 'var(--color-steel-blue)',
+              textTransform: 'uppercase',
+            }}
+          >
+            Where Creativity Meets Impact
+          </h2>
+          <p 
+            className="mb-16 max-w-4xl"
+            style={{
+              fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
+              fontWeight: 400,
+              lineHeight: 1.5,
+              color: 'var(--color-bark)',
+            }}
+          >
+            Too often, digital spaces prioritize efficiency over empathy. My work challenges that norm — centering lived experience, mindful innovation, and ease of use.
+          </p>
+
+          {/* Three Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Design */}
+            <div>
+              <h3 
+                className="mb-4"
+                style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: 'var(--color-ink)',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Design
+              </h3>
+              <p 
+                style={{
+                  fontSize: '1rem',
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                  color: 'var(--color-bark)',
+                }}
+              >
+                Skilled product designer with experience in design thinking, product development, and usability testing.
+              </p>
+            </div>
+
+            {/* Development */}
+            <div>
+              <h3 
+                className="mb-4"
+                style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: 'var(--color-ink)',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Development
+              </h3>
+              <p 
+                style={{
+                  fontSize: '1rem',
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                  color: 'var(--color-bark)',
+                }}
+              >
+                Actively expanding expertise in front-end development, with a focus on scalable cross-platform interfaces.
+              </p>
+            </div>
+
+            {/* Leadership */}
+            <div>
+              <h3 
+                className="mb-4"
+                style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: 'var(--color-ink)',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Leadership
+              </h3>
+              <p 
+                style={{
+                  fontSize: '1rem',
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                  color: 'var(--color-bark)',
+                }}
+              >
+                Empathetic leader passionate about mentorship and community impact, committed to cultivating collaborative growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div 
+        className="max-w-7xl mx-auto px-6"
+        style={{ borderTop: '1px solid var(--color-stone)' }}
+      />
+
       {/* Featured Work Section */}
       <section id="featured-work" className="max-w-7xl mx-auto px-6 py-24">
+        <h2 
+          className="mb-12"
+          style={{
+            fontSize: '12px',
+            fontWeight: 600,
+            letterSpacing: '0.1em',
+            color: 'var(--color-bark)',
+            textTransform: 'uppercase',
+          }}
+        >
+          Featured Work
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredProjects.map((project) => (
             <Link
@@ -210,6 +378,164 @@ export function Home() {
                 </div>
               </div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div 
+        className="max-w-7xl mx-auto px-6"
+        style={{ borderTop: '1px solid var(--color-stone)' }}
+      />
+
+      {/* Personal Ventures Section */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <h2 
+          className="mb-12"
+          style={{
+            fontSize: '12px',
+            fontWeight: 600,
+            letterSpacing: '0.1em',
+            color: 'var(--color-bark)',
+            textTransform: 'uppercase',
+          }}
+        >
+          Personal Ventures
+        </h2>
+        <div className="flex flex-col gap-8">
+          {personalVentures.map((venture, index) => (
+            <Link
+              key={index}
+              to={venture.link}
+              className="group block py-6"
+              style={{
+                borderBottom: '1px solid var(--color-stone)',
+                transition: 'opacity 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.opacity = '0.7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.opacity = '1';
+              }}
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex-1">
+                  <h3 
+                    style={{ 
+                      color: 'var(--color-ink)', 
+                      fontWeight: 600, 
+                      fontSize: '1.25rem',
+                      marginBottom: '4px',
+                    }}
+                  >
+                    {venture.title}
+                  </h3>
+                  <p 
+                    style={{ 
+                      color: 'var(--color-steel-blue)', 
+                      fontSize: '0.875rem',
+                      fontWeight: 600,
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    {venture.role}
+                  </p>
+                </div>
+                <p 
+                  className="md:max-w-md"
+                  style={{ 
+                    color: 'var(--color-bark)', 
+                    fontSize: '0.875rem',
+                    fontWeight: 400,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {venture.description}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div 
+        className="max-w-7xl mx-auto px-6"
+        style={{ borderTop: '1px solid var(--color-stone)' }}
+      />
+
+      {/* Professional Experience Section */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <h2 
+          className="mb-12"
+          style={{
+            fontSize: '12px',
+            fontWeight: 600,
+            letterSpacing: '0.1em',
+            color: 'var(--color-bark)',
+            textTransform: 'uppercase',
+          }}
+        >
+          Professional Experience
+        </h2>
+        <div className="flex flex-col gap-8">
+          {professionalExperience.map((experience, index) => (
+            <div
+              key={index}
+              className="py-6"
+              style={{
+                borderBottom: '1px solid var(--color-stone)',
+              }}
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex-1">
+                  <h3 
+                    style={{ 
+                      color: 'var(--color-ink)', 
+                      fontWeight: 600, 
+                      fontSize: '1.25rem',
+                      marginBottom: '4px',
+                    }}
+                  >
+                    {experience.company}
+                  </h3>
+                  <div className="flex items-center gap-3">
+                    <p 
+                      style={{ 
+                        color: 'var(--color-steel-blue)', 
+                        fontSize: '0.875rem',
+                        fontWeight: 600,
+                        fontStyle: 'italic',
+                      }}
+                    >
+                      {experience.role}
+                    </p>
+                    <span style={{ color: 'var(--color-stone)' }}>·</span>
+                    <p 
+                      style={{ 
+                        color: 'var(--color-bark)', 
+                        fontSize: '0.875rem',
+                        fontWeight: 400,
+                      }}
+                    >
+                      {experience.period}
+                    </p>
+                  </div>
+                </div>
+                <p 
+                  className="md:max-w-md"
+                  style={{ 
+                    color: 'var(--color-bark)', 
+                    fontSize: '0.875rem',
+                    fontWeight: 400,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {experience.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </section>
