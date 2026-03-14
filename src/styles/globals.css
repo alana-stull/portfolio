@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -6,12 +6,19 @@
   /* ========================================
      PORTFOLIO COLOR PALETTE
      ======================================== */
-  --color-brown-primary: #6c382a;
-  --color-tan-accent: #b88c6f;
-  --color-gray-text: #5b5b5b;
-  --color-white: #ffffff;
-  --color-black: #1a1a1a;
-  --color-light-bg: #f9f9f9;
+  --color-warm-white: #FAF8F4;
+  --color-ink: #2A2118;
+  --color-bark: #5A4A37;
+  --color-steel-blue: #3D5A7A;
+  --color-stone: #C8BFA8;
+  
+  /* Legacy mappings for compatibility */
+  --color-brown-primary: var(--color-ink);
+  --color-tan-accent: var(--color-bark);
+  --color-gray-text: var(--color-bark);
+  --color-white: var(--color-warm-white);
+  --color-black: var(--color-ink);
+  --color-light-bg: var(--color-warm-white);
   
   /* ========================================
      TYPOGRAPHY SYSTEM
@@ -27,7 +34,7 @@
   --font-size-body-large: 1.125rem; /* 18px - Large body text */
   --font-size-body: 1rem;           /* 16px - Default body text */
   --font-size-small: 0.875rem;      /* 14px - Small text, tags */
-  --font-size-tiny: 0.75rem;        /* 12px - Captions, labels */
+  --font-size-tiny: 0.625rem;       /* 10px - Nav labels */
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -35,7 +42,7 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-black: 900;
+  --font-weight-black: 800;
   
   /* Line Heights */
   --line-height-tight: 1.2;
@@ -52,27 +59,27 @@
   
   /* Standard theme variables */
   --font-size: 16px;
-  --background: var(--color-white);
-  --foreground: var(--color-black);
-  --card: var(--color-white);
-  --card-foreground: var(--color-black);
-  --popover: var(--color-white);
-  --popover-foreground: var(--color-black);
-  --primary: var(--color-brown-primary);
-  --primary-foreground: var(--color-white);
-  --secondary: var(--color-tan-accent);
-  --secondary-foreground: var(--color-black);
-  --muted: var(--color-light-bg);
-  --muted-foreground: var(--color-gray-text);
-  --accent: var(--color-tan-accent);
-  --accent-foreground: var(--color-black);
+  --background: var(--color-warm-white);
+  --foreground: var(--color-ink);
+  --card: var(--color-warm-white);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-warm-white);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-ink);
+  --primary-foreground: var(--color-warm-white);
+  --secondary: var(--color-bark);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-warm-white);
+  --muted-foreground: var(--color-bark);
+  --accent: var(--color-steel-blue);
+  --accent-foreground: var(--color-warm-white);
   --destructive: #dc2626;
-  --destructive-foreground: var(--color-white);
-  --border: rgba(0, 0, 0, 0.1);
+  --destructive-foreground: var(--color-warm-white);
+  --border: var(--color-stone);
   --input: transparent;
-  --input-background: #f3f3f5;
-  --switch-background: #cbced4;
-  --ring: var(--color-brown-primary);
+  --input-background: var(--color-warm-white);
+  --switch-background: var(--color-stone);
+  --ring: var(--color-steel-blue);
   --radius: 0.5rem;
 }
 
@@ -111,7 +118,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Figtree', sans-serif;
   }
 }
 
@@ -275,4 +282,9 @@ html {
   50% {
     transform: translateY(-10px);
   }
+}
+
+/* Project card hover shadow */
+.project-card-shadow {
+  box-shadow: 0 4px 20px rgba(42, 33, 24, 0.08);
 }

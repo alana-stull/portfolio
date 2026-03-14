@@ -1,56 +1,25 @@
 import { Link } from 'react-router-dom';
-import { ChevronDown, ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import svgPaths from '../imports/svg-qqzod930ty';
-import MentorMeImage from '../imports/Group33987';
 import NotedByNaniImage from '../imports/Group33988';
 import SerenityPhones from '../imports/Group33982';
 import BlyssImageStatic from 'figma:asset/a599320fb284b50fd85c5467705d2e1467d43acb.png';
-import ClarityAssistImage from 'figma:asset/33f3027060c6f4bca0459accb8f98b430d8f9f34.png';
-import AmazonLearnImage from 'figma:asset/2a7240ae2d20598003ea0a91aa16a212bbaaf224.png';
 
 export function Home() {
-  const professionalProjects = [
-    {
-      id: 'clarity-assist',
-      title: 'Clarity Assist',
-      description: 'UX Design Intern',
-      tags: ['Generative AI', 'Conversation & Interaction Design'],
-      externalLink: 'https://www.figma.com/proto/fNmvcmDOMWIOM3WsYTqcDk/final-internship-presentation?page-id=0%3A1&node-id=1-12764&scaling=scale-down&content-scaling=fixed&t=QMY6bv2ctEgOflMs-1',
-    },
-    {
-      id: 'amazon-learn',
-      title: 'Amazon Learn',
-      description: 'UX Design Intern',
-      tags: ['Edtech', 'Product Design', 'Usability Testing'],
-      externalLink: 'https://www.figma.com/proto/3mRKne0c0SZYgb92S28miA/all-presentations?page-id=0%3A1&node-id=0-2029&starting-point-node-id=0%3A2029&scaling=scale-down&content-scaling=fixed&t=Dr5c2C1eCFC6CWZe-1',
-    },
-    {
-      id: 'mentor-me-collective',
-      title: 'Mentor Me Collective',
-      description: 'Content Designer',
-      tags: ['Brand & Visual Identity', 'Content Design'],
-    },
-  ];
-
-  const personalProjects = [
+  const featuredProjects = [
     {
       id: 'blyss',
-      title: 'Blyss Social',
-      description: 'Co-Founder, Chief of Design & Development',
-      tags: ['End-to-End Product Development', 'Product Strategy'],
+      title: 'Blyss',
+      description: 'Social wellness platform for mindful connection',
     },
     {
       id: 'noted-by-nani',
-      title: 'Noted by Nani',
-      description: 'Founder, Digital Product Designer',
-      tags: ['Digital Product Design', 'Data Visualization'],
+      title: 'Rhythm',
+      description: 'Digital planning tools for intentional living',
     },
     {
       id: 'sereniti',
-      title: 'Sereniti',
-      description: 'Founder, Product Designer',
-      tags: ['Academic Research', 'Product Design'],
+      title: 'Crwn',
+      description: 'Mental wellness app with personalized support',
     },
   ];
 
@@ -65,292 +34,185 @@ export function Home() {
     switch (studyId) {
       case 'noted-by-nani':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-start pr-[220px]">
-            <div className="w-[450px] h-[450px] relative scale-[0.72]">
+          <div 
+            className="aspect-[4/3] rounded-lg mb-4 overflow-hidden flex items-center justify-center"
+            style={{ backgroundColor: 'var(--color-warm-white)', border: '1px solid var(--color-stone)' }}
+          >
+            <div className="w-[350px] h-[350px] relative scale-[0.6]">
               <NotedByNaniImage />
             </div>
           </div>
         );
       case 'blyss':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-4 pr-[80px]">
+          <div 
+            className="aspect-[4/3] rounded-lg mb-4 overflow-hidden flex items-center justify-center p-6"
+            style={{ backgroundColor: 'var(--color-warm-white)', border: '1px solid var(--color-stone)' }}
+          >
             <img src={BlyssImageStatic} alt={title} className="w-full h-full object-contain" />
           </div>
         );
       case 'sereniti':
         return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-4 pr-[80px]">
-            <div className="w-[400px] h-[400px] relative scale-[0.65]">
+          <div 
+            className="aspect-[4/3] rounded-lg mb-4 overflow-hidden flex items-center justify-center p-4"
+            style={{ backgroundColor: 'var(--color-warm-white)', border: '1px solid var(--color-stone)' }}
+          >
+            <div className="w-[300px] h-[300px] relative scale-[0.55]">
               <SerenityPhones />
-            </div>
-          </div>
-        );
-      case 'clarity-assist':
-        return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-6">
-            <img src={ClarityAssistImage} alt={title} className="w-full h-full object-contain" />
-          </div>
-        );
-      case 'amazon-learn':
-        return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-center p-6">
-            <img src={AmazonLearnImage} alt={title} className="w-full h-full object-contain" />
-          </div>
-        );
-      case 'mentor-me-collective':
-        return (
-          <div className="aspect-[4/3] bg-white rounded-lg mb-4 overflow-hidden flex items-center justify-start pr-[150px]">
-            <div className="w-[450px] h-[450px] relative scale-[0.65]">
-              <MentorMeImage />
             </div>
           </div>
         );
       default:
         return (
-          <div className="aspect-[4/3] bg-gray-100 rounded-lg mb-4 overflow-hidden">
+          <div 
+            className="aspect-[4/3] rounded-lg mb-4 overflow-hidden"
+            style={{ backgroundColor: 'var(--color-warm-white)', border: '1px solid var(--color-stone)' }}
+          >
             <ImageWithFallback
               src={`https://via.placeholder.com/800x600?text=Project+${studyId}`}
               alt={title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover"
             />
           </div>
         );
     }
   };
 
-
   return (
     <div>
-      {/* Hero Section (omitted for brevity) */}
-      <section className="min-h-[100vh] flex items-center justify-center relative">
+      {/* Hero Section */}
+      <section className="min-h-[90vh] flex items-center" style={{ backgroundColor: 'var(--color-warm-white)' }}>
         <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-5xl" style={{ paddingLeft: '60px' }}>
-            <h1 className="mb-8" style={{
-              fontSize: 'clamp(3rem, 8vw, 6rem)',
-              fontWeight: 'var(--font-weight-bold)',
-              lineHeight: '1.1',
-              color: 'var(--color-brown-primary)',
-              textTransform: 'lowercase'
-            }}>
+          <div className="max-w-4xl">
+            {/* Eyebrow */}
+            <p 
+              className="mb-4"
+              style={{
+                fontSize: '12px',
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                color: 'var(--color-bark)',
+                textTransform: 'uppercase',
+              }}
+            >
+              ux engineer · entrepreneur
+            </p>
+            
+            {/* Headline */}
+            <h1 
+              className="mb-6"
+              style={{
+                fontSize: 'clamp(3rem, 8vw, 5rem)',
+                fontWeight: 800,
+                lineHeight: 1.1,
+                color: 'var(--color-ink)',
+              }}
+            >
               hey, i'm alana!
             </h1>
-            <p className="mb-8" style={{
-              fontSize: 'clamp(2.5rem, 2.5vw, 3.5rem)',
-              fontWeight: 'var(--font-weight-medium)',
-              lineHeight: '1.2',
-              color: 'var(--color-gray-text)',
-              textTransform: 'lowercase'
-            }}>
-              ux engineer and entrepreneur designing experiences that empower, connect, and simplify.
-            </p>
-
-            {/* Scroll Down Arrow */}
-            <button
-              onClick={scrollToWork}
-              className="flex flex-col items-center cursor-pointer hover:opacity-70 transition-opacity mt-16"
-              aria-label="Scroll to work section"
+            
+            {/* Description */}
+            <p 
+              className="mb-8 max-w-2xl"
+              style={{
+                fontSize: '1.125rem',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                color: 'var(--color-bark)',
+              }}
             >
-              <ChevronDown
-                size={50}
+              Aspiring design technologist working at the intersection of AI, design strategy, 
+              and product development. I design on the foundation of lived experience, blending 
+              creativity, empathy, and data-driven insights to craft products that empower, 
+              connect, and simplify. Guided by human-centered design, technical 
+              excellence, and social impact, I translate complex problems into intuitive, 
+              impactful experiences.
+            </p>
+            
+            {/* CTAs */}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={scrollToWork}
+                className="px-6 py-3 rounded transition-all hover:opacity-90"
                 style={{
-                  color: 'var(--color-tan-accent)',
-                  animation: 'bounce 2s infinite',
+                  backgroundColor: 'var(--color-ink)',
+                  color: 'var(--color-warm-white)',
+                  fontWeight: 600,
+                  fontSize: '12px',
+                  letterSpacing: '0.05em',
                 }}
-              />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Introduction Section (omitted for brevity) */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-gray-900 mb-4 text-2xl font-bold">
-          WHERE CREATIVITY MEETS IMPACT
-        </h2>
-        <p className="mb-12 max-w-6xl" style={{ fontSize: '24px', lineHeight: '1.4', color: 'var(--color-gray-text)' }}>
-          Too often, digital spaces prioritize efficiency over empathy. My work challenges that norm, centering lived experience, mindful innovation, and ease of use.
-        </p>
-
-        {/* Skills Container (omitted for brevity) */}
-        <div className="bg-white rounded-[50px] shadow-lg p-12 md:p-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Design */}
-            <div className="flex flex-col items-start">
-              <div className="w-[70px] h-[70px] flex items-start justify-start mb-3">
-                <svg className="w-[90px] h-[100px]" fill="none" viewBox="0 0 119 152">
-                  <g>
-                    <path d={svgPaths.pcb84900} fill="var(--color-tan-accent)" />
-                    <path d={svgPaths.p3359bf00} fill="var(--color-tan-accent)" />
-                  </g>
-                </svg>
-              </div>
-              <h3 className="mb-4 text-gray-900" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase' }}>
-                Design
-              </h3>
-              <p className="text-gray-900" style={{ fontSize: '16px', lineHeight: '1.4' }}>
-                Skilled product designer with experience in design thinking, product development, and usability testing.
-              </p>
-            </div>
-
-            {/* Development */}
-            <div className="flex flex-col items-start">
-              <div className="w-[60px] h-[60px] flex items-center justify-start mb-3">
-                <svg className="w-[50px] h-[30px]" fill="none" viewBox="0 0 62 38">
-                  <g>
-                    <path d={svgPaths.p16f1bc00} fill="var(--color-tan-accent)" />
-                  </g>
-                </svg>
-              </div>
-              <h3 className="mb-4 text-gray-900" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase' }}>
-                Development
-              </h3>
-              <p className="text-gray-900" style={{ fontSize: '16px', lineHeight: '1.4' }}>
-                Actively expanding expertise in front-end development, with a focus on scalable cross-platform interfaces.
-              </p>
-            </div>
-
-            {/* Leadership */}
-            <div className="flex flex-col items-start">
-              <div className="w-[60px] h-[60px] flex items-start justify-start mb-3">
-                <svg className="w-[50px] h-[60px]" fill="none" viewBox="0 0 80 97">
-                  <g>
-                    <path clipRule="evenodd" d={svgPaths.p848be00} fill="var(--color-tan-accent)" fillRule="evenodd" />
-                  </g>
-                </svg>
-              </div>
-              <h3 className="mb-4 text-gray-900" style={{ fontSize: '20px', fontWeight: 'var(--font-weight-bold)', textTransform: 'uppercase' }}>
-                Leadership
-              </h3>
-              <p className="text-gray-900" style={{ fontSize: '16px', lineHeight: '1.4' }}>
-                Empathetic leader passionate about mentorship and community impact, committed to cultivating collaborative growth.
-              </p>
+              >
+                VIEW WORK
+              </button>
+              <Link
+                to="/about"
+                className="px-4 py-3 transition-colors hover:opacity-70"
+                style={{
+                  color: 'var(--color-ink)',
+                  fontWeight: 600,
+                  fontSize: '12px',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                {'ABOUT ME →'}
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Work Section */}
-      <section id="featured-work" className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-gray-900 mb-12 text-2xl font-bold">
-          PERSONAL VENTURES
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-          {personalProjects.map((study) => (
+      <section id="featured-work" className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {featuredProjects.map((project) => (
             <Link
-              key={study.id}
-              to={`/case-studies/${study.id}`}
-              className="group"
+              key={project.id}
+              to={`/case-studies/${project.id}`}
+              className="group block"
+              style={{
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 30px rgba(42, 33, 24, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
-              {renderProjectImage(study.id, study.title)}
-
-              <div className="flex items-center mb-1">
-                <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
-                  {study.title}
-                </h3>
-              </div>
-
-              <p className="text-body mb-3">
-                {study.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {study.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 rounded-md"
-                    style={{
-                      backgroundColor: 'var(--color-light-bg)',
-                      color: 'var(--color-gray-text)',
-                      fontSize: 'var(--font-size-small)'
+              <div 
+                className="rounded-lg overflow-hidden"
+                style={{ backgroundColor: 'var(--color-warm-white)' }}
+              >
+                {renderProjectImage(project.id, project.title)}
+                <div className="p-4">
+                  <h3 
+                    className="mb-1"
+                    style={{ 
+                      color: 'var(--color-ink)', 
+                      fontWeight: 600, 
+                      fontSize: '1.25rem' 
                     }}
                   >
-                    {tag}
-                  </span>
-                ))}
+                    {project.title}
+                  </h3>
+                  <p 
+                    style={{ 
+                      color: 'var(--color-bark)', 
+                      fontSize: '0.875rem',
+                      fontWeight: 400,
+                    }}
+                  >
+                    {project.description}
+                  </p>
+                </div>
               </div>
             </Link>
           ))}
         </div>
-
-        <h2 className="text-gray-900 mb-12 text-2xl font-bold">
-          PROFESSIONAL EXPERIENCE
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {professionalProjects.map((study) => (
-            study.externalLink ? (
-              <a
-                key={study.id}
-                href={study.externalLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                {renderProjectImage(study.id, study.title)}
-
-                <div className="flex items-center mb-1">
-                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)'}}>
-                    {study.title}
-                  </h3>
-                  <ExternalLink size={16} className="text-gray-500 group-hover:text-gray-700 transition-colors" style={{ paddingLeft: '5px'}} />
-                </div>
-
-                <p className="text-body mb-3">
-                  {study.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {study.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-md"
-                      style={{
-                        backgroundColor: 'var(--color-light-bg)',
-                        color: 'var(--color-gray-text)',
-                        fontSize: 'var(--font-size-small)'
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
-            ) : (
-              <Link
-                key={study.id}
-                to={`/case-studies/${study.id}`}
-                className="group"
-              >
-                {renderProjectImage(study.id, study.title)}
-
-                <div className="flex items-center mb-1">
-                  <h3 className="group-hover:opacity-70 transition-opacity mr-2" style={{ color: 'var(--color-black)', fontWeight: 'var(--font-weight-semibold)', fontSize: 'var(--font-size-h4)' }}>
-                    {study.title}
-                  </h3>
-                </div>
-
-                <p className="text-body mb-3">
-                  {study.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {study.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-md"
-                      style={{
-                        backgroundColor: 'var(--color-light-bg)',
-                        color: 'var(--color-gray-text)',
-                        fontSize: 'var(--font-size-small)'
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            )
-          ))}
-        </div>
       </section>
-
-
     </div>
   );
 }
